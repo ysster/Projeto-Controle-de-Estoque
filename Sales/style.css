@@ -1,6 +1,6 @@
 :root {
-  --blue: #1f3c88;
-  --blue-dark: #162f6b;
+  --blue: #1E3A8A;
+  --blue-dark: #1E3A8A;
   --white: #ffffff;
   --gray: #666;
   --border: #dcdcdc;
@@ -60,74 +60,109 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  padding: 0 40px;
+  padding: 0 240px;
 }
 
 .imgcard{
-  width: 250px;
-  height: 150px;
+  width: 150px;
+  height: 125px;
 }
 
 .card {
-  border: 1px solid var(--border);
+  border: 1px solid black;
   padding: 20px;
   text-align: center;
+  width: 300px;
+  height: 300px;
 }
 
-.card-action h3 {
+.card h3 {
   margin-bottom: 10px;
 }
 
-.card-action p {
-  font-size: 14px;
-  color: var(--gray);
-  margin-bottom: 15px;
-}
-
-.card-action button {
+.card button {
   background: var(--blue);
   color: white;
   border: none;
   padding: 10px 14px;
+  margin-top: 10px;
   cursor: pointer;
 }
 
-/* MAIN SUMMARY */
-.summary-main {
+.resumos{
   background: var(--blue);
   color: white;
-  margin: 40px;
+  margin: 100px;
   padding: 30px;
 }
 
-.summary-value {
-  font-size: 28px;
+.resumo h3{
+  margin-top: 2%;
+  font-size: 30px;
+}
+
+.resumovalor{
+  font-size: 70px;
   font-weight: bold;
 }
 
-/* SECONDARY SUMMARY */
-.summary-secondary {
+.imgresumo{
+  width: 200px;
+  height: 200px;
+  margin-left: 88%;
+  margin-top: -900px;
+}
+
+.cardsegundos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
   padding: 0 40px;
 }
 
-.summary-card {
-  border: 1px solid var(--border);
-  padding: 20px;
+.cardsegundo {
+  border: 1px solid black;
+  padding: 50px;
+  width: 90%;
+  margin-left: 5%;
 }
 
-.summary-card h4 {
+.cardsegundo h4 {
   margin-bottom: 10px;
+  font-size: 20px;
+  margin-top: 50px;
 }
 
-/* FOOTER */
+.segundoimg{
+  width: 200px;
+  height: 159px;
+  margin-left: 70%;
+  margin-top: -130px;
+}
+
+.logofooter{
+  margin-right: 100%;
+  width: 130px;
+  height: 90px;
+}
+
+.desenvolvido{
+  margin-left: 15%;
+  margin-top: -5%;
+}
+
+.texto{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
 .footer {
   background: var(--blue-dark);
   color: white;
   padding: 30px;
-  margin-top: 40px;
-  text-align: center;
+  margin-top: 90px;
+  text-align: left;
   font-size: 14px;
+}
+.ano{
+  margin-left: 97%;
 }
