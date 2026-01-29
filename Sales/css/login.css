@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+}
+
+.login-box {
+    width: 360px;
+    border: 1px solid #ccc;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.login-box h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.cadastro {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.cadastro a {
+    color: #1f3c88;
+    text-decoration: none;
+}
+
+.login-box button {
+    width: 120px;
+    padding: 8px;
+    background-color: #1f3c88;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #1f3c88; 
+    color: white;
+    padding: 30px;
+    margin-top: 90px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.logofooter {
+    margin-right: 100%;
+    width: 130px;
+    height: 90px;
+}
+
+.texto {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.desenvolvido {
+    margin-left: 15%;
+    margin-top: -7%;
+}
+
+.ano {
+    margin-left: 96%;
+}
