@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif; 
+}
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 900px;
+}
+.main-header {
+    color: white;
+    padding: 15px 0;
+    background-color: #1e3a8a; 
+}
+.header-content {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.logo {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    height: 60px; 
+    width: auto;  
+}
+.user-box {
+    align-items: center;
+    gap: 8px;
+    font-family: sans-serif; 
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 5px 15px;
+    border-radius: 4px;
+    display: flex;
+}
+/* main */
+.breadcrumb {
+    padding: 20px 0;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    color: #000;
+}
+.page-title-section {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #eeeeee; 
+    padding: 30px 0;
+}
+.page-title-section h2 {
+    margin-bottom: 10px;
+    color: #222;
+    font-size: 1.8rem;
+}
+.page-title-section p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #444;
+}
+.content-wrapper {
+    max-width: 700px; 
+}
+.cart-icon-container {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+form {
+    margin-bottom: 40px;
+}
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group label {
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 8px;
+}
+.input-field {
+    color: #555;
+    font-family: sans-serif; 
+    border-radius: 2px;
+    background-color: #f2f2f2; 
+    border: none; 
+    font-size: 0.95rem;
+    width: 100%;
+    padding: 12px 15px;
+}
+.form-row {
+    gap: 30px;
+    display: flex;
+}
+.half-width {
+    flex: 1; 
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.btn-submit {
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #1e3a8a; 
+    color: white;
+    border: none;
+    text-align: center;
+    display: block;
+    width: 50%; 
+    margin: 30px auto 0 auto; 
+    padding: 15px;
+}
+.btn-submit:hover {
+    background-color: #152c6b;
+}
+.summary-box {
+    padding: 20px;
+    margin-bottom: 50px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-family: sans-serif;
+    color: #000;
+    background-color: #f2f2f2;
+}
