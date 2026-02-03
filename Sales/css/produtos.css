@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    
+}
+body {
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+.container {
+    margin: auto;
+    width: 90%;
+    
+}
+/* topo */
+.topo {
+    padding: 15px 0;
+    color: white;
+    background: #1e3799;
+}
+.topo-flex {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.logo {
+    width: 120px;
+}
+.perfil {
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+/* titulo */
+.titulo {
+    text-align: center;
+    margin: 30px 0;
+}
+/* cards */
+.cards {
+    justify-content: space-between;
+    gap: 20px;
+    display: flex;
+}
+.card {
+    width: 25%;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+.card img {
+    width: 40px;
+}
+.card button {
+    border: none;
+    padding: 6px 10px;
+    margin-top: 10px;
+    background: #1e3799;
+    color: white;
+}
+/* total */
+.total {
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 25px;
+    display: flex;
+    margin: 40px auto;
+    background: #1e3799;
+}
+.icone-total {
+    width: 80px;
+}
+/* produtos */
+.produtos {
+    text-align: center;
+}
+.grid-produtos {
+    gap: 25px;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.produto {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+.produto img {
+    width: 100%;
+}
+.produto button {
+    border: none;
+    margin-top: 10px;
+    padding: 6px;
+    width: 100%;
+    background: #1e3799;
+    color: white;
+}
+/* rodape */
+.rodape {
+    padding: 20px;
+    margin-top: 40px;
+    background: #1e3799;
+    color: white;
+
+}
+.rodape-flex {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.logo-rodape {
+    width: 90px;
+}
