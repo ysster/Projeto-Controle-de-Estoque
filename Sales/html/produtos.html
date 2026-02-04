@@ -1,107 +1,98 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+    <html lang="pt-BR">
+    <head>
     <meta charset="UTF-8">
-    <title>My Sales</title>
+    <title>Sales - Produtos</title>
     <link rel="stylesheet" href="../css/produtos.css">
 </head>
+
 <body>
-<header class="topo">
-    <div class="container topo-flex">
-        <img src="../assets/Logoazul.png" class="logo" alt="Sales">
-        <div class="perfil">
-            <img src="../assets/perfil.png" alt="">
-            <span>Ana Maria</span>
-        </div>
-    </div>
+
+<header class="topbar">
+  <!-- Seta de voltar -->
+  <a href="index.html" class="btn-voltar">←</a>
+
+  <img class="Logo" src="../assets/Logoazul.png" alt="Logo Sales">
+
+  <div class="user">
+    <img class="perfil" src="../assets/perfil.png" alt="Perfil">
+    <span class="username" id="nomeUsuario">Usuário</span>
+  </div>
+
+  <img class="settings" src="../assets/config.png" alt="Configurações">
 </header>
-<section class="titulo">
-    <h1>Controle de vendas simples e rápido!</h1>
-</section>
-<section class="cards container">
-    <div class="card">
-        <img src="../assets/produtos.png">
-        <h3>Produtos</h3>
-        <p>Cadastrar e gerenciar produtos disponíveis para venda.</p>
-        <button>Gerenciar produtos</button>
-    </div>
-    <div class="card">
-        <img src="../assets/vendas.png">
-        <h3>Cadastrar Venda</h3>
-        <p>Adicionar uma nova venda com produto, categoria, quantidade e valor.</p>
-        <button>Ir para cadastro</button>
-    </div>
-    <div class="card">
-        <img src="../assets/vendas.png">
-        <h3>Vendas</h3>
-        <p>Consultar a tabela de vendas registradas.</p>
-        <button>Abrir tabela</button>
-    </div>
-    <div class="card">
-        <img src="../assets/relatorios.png">
-        <h3>Relatórios</h3>
-        <p>Ver total faturado, nº de vendas e métrica extra.</p>
-        <button> Ver relatório</button>
-    </div>
-</section>
-<section class="total container">
-    <div class="total-texto">
-        <h2>Total Faturado</h2>
-        <p>Soma de todas as vendas registradas</p>
-    </div>
-    <img src="../assets/dinheiro.png" class="icone-total">
-</section>
-<section class="produtos container">
-    <h2>Nossos Produtos</h2>
-    <p>Confira nossas opções de bebidas, lanches e doces</p>
-    <div class="grid-produtos">
-        <div class="produto">
-            <img src="../assets/coca.jpg">
-            <h4>Refrigerante</h4>
-            <span>R$ 5,00</span>
-            <button>Comprar</button>
-        </div>
-        <div class="produto">
-            <img src="../assets/goiaba.png">
-            <h4>Suco de goiaba</h4>
-            <span>R$ 6,00</span>
-            <button>Comprar</button>
-        </div>
-        <div class="produto">
-            <img src="../assets/hamburguer.png">
-            <h4>Hambúrguer</h4>
-            <span>R$ 8,00</span>
-            <button>Comprar</button>
-        </div>
-        <div class="produto">
-            <img src="../assets/pizza.jpg">
-            <h4>Pizza</h4>
-            <span>R$ 40,00</span>
-            <button>Comprar</button>
-        </div>
-        <div class="produto">
-            <img src="../assets/brigadeiro.jpg">
-            <h4>Brigadeiro</h4>
-            <span>R$ 3,00</span>
-            <button>Comprar</button>
-        </div>
-        <div class="produto">
-            <img src="../assets/bolo.jpg">
-            <h4>Fatia de bolo</h4>
-            <span>R$ 10,00</span>
-            <button>Comprar</button>
+
+<!-- CONTEÚDO -->
+<div class="container">
+
+    <div class="titulo">Cadastro e Gerenciamento de Produtos</div>
+
+    <!-- FORMULÁRIO -->
+    <div class="form-box">
+        <h3>Cadastrar / Editar Produto</h3>
+
+        <div class="form">
+            <div class="campo">
+                <label>Produto</label>
+                <input type="text" id="produto">
+            </div>
+
+            <div class="campo">
+                <label>Categoria</label>
+                <input type="text" id="categoria">
+            </div>
+
+            <div class="campo">
+                <label>Valor (R$)</label>
+                <input type="number" id="valor" step="0.01">
+            </div>
+
+            <button class="botao" onclick="salvarProduto()">Salvar</button>
         </div>
     </div>
-</section>
-<footer class="rodape">
-    <div class="container rodape-flex">
-        <img src="../assets/Logoazul.png" class="logo-rodape">
-        <div>
-            <p>My Sales – Controle de Vendas</p>
-            <p>Projeto orientado por Romerito Campos</p>
-        </div>
-        <p>© 2026</p>
+
+    <!-- LISTA -->
+    <div class="lista-box">
+        <h3>Produtos Cadastrados</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaProdutos"></tbody>
+        </table>
     </div>
+
+</div>
+<footer class="footer">
+    <img class="logofooter" src="../assets/Logoazul.png" alt="Erro de imagem"> 
+    <div class="texto">
+        <p><strong>My Sales</strong> – Controle de Vendas</p><br>
+        <p>Projeto orientado por:</p><br>
+        <p>
+            Romerito Campos <br>
+            Design web <br>
+            2 ano 1v
+        </p><br>
+        <div class="desenvolvido">
+            <p>Desenvolvido por:</p><br>
+            <p>
+                Andreza Pereira da Silva <br>
+                Jamilly Sterphane de Morais <br>
+                Joeslyanny Luanda da Silva Lopes
+            </p>
+        </div>
+    </div>
+    <p class="ano">© 2026</p>
 </footer>
+
+
+<script src="../js/produtos.js"></script>
+
 </body>
 </html>

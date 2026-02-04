@@ -52,13 +52,11 @@ body {
   margin-left: 16px;
 }
 
-/* ================= TÍTULO ================= */
 .titulo {
   text-align: center;
-  margin: 35px 0 25px 0;
+  margin: 40px;
 }
 
-/* ================= CARDS PRINCIPAIS ================= */
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 230px);
@@ -99,95 +97,114 @@ body {
   display: block;
 }
 
-/* ================= RESUMO ================= */
 .resumos {
   background: var(--blue);
-  color: white;
   margin: 60px 30px;
-  padding: 40px 50px;
-
-  display: flex;                  /* 🔥 lado a lado */
-  align-items: center;
-  justify-content: space-between; /* texto | imagem */
+  padding: 20px;
 }
 
 .resumo {
+  border: 2px solid white;
+  padding: 30px 40px;
+  color: white;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 60%;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.resumo h3 {
-  font-size: 26px;
+.resumo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resumo-info h3 {
+  font-size: 22px;
 }
 
 .resumovalor {
-  font-size: 60px;
+  font-size: 46px;
   font-weight: bold;
 }
 
-.resumo p {
+.resumo-info p {
   font-size: 14px;
   opacity: 0.9;
 }
 
 .imgresumo {
-  width: 180px;
+  width: 110px;
   height: auto;
-  flex-shrink: 0;                 /* 🔥 nunca desce */
 }
 
-/* ================= CARDS SECUNDÁRIOS ================= */
 .cardsegundos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  flex-wrap: nowrap;
 }
 
 .cardsegundo {
   border: 1px solid black;
-  padding: 24px;
+  padding: 14px 18px;
+  width: 700px;
+  height: 200px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  align-items: center;
+  align-content: start;    
+}
+
+.cardsegundo h4,
+.cardsegundo p {
+  grid-column: 1;
+  align-self: start;
 }
 
 .cardsegundo h4 {
-  margin-bottom: 8px;
-  font-size: 18px;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.cardsegundo p {
+  font-size: 13px;
+  line-height: 1.2;
+  margin: 2px 0;
 }
 
 .segundoimg {
-  width: 180px;
-  height: auto;
-  display: block;
-  margin-left: auto;
+  width: 90px;
+  justify-self: end;
 }
 
-/* ================= FOOTER ================= */
 .footer {
-  background-color: #1f3c88;
-  color: white;
-  padding: 30px;
-  margin-top: 70px;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+    background-color: #1f3c88; 
+    color: white;
+    padding: 30px;
+    margin-top: 90px;
+    text-align: left;
+    font-size: 14px;
 }
 
 .logofooter {
-  width: 130px;
-  height: 90px;
+    margin-right: 100%;
+    width: 130px;
+    height: 90px;
 }
 
 .texto {
-  margin-top: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .desenvolvido {
-  margin-top: 10px;
+    margin-left: 15%;
+    margin-top: -7%;
 }
 
 .ano {
-  align-self: flex-end;
+    margin-left: 96%;
 }

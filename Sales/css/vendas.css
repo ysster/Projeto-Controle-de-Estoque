@@ -1,136 +1,158 @@
 * {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    margin: 0;
 }
+
 body {
-    background-color: #fff;
+    background-color: #f1f1f1;
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
-    font-family: 'Times New Roman', Times, serif; 
 }
-.container {
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: 900px;
-}
-.main-header {
+
+/* ================= HEADER ================= */
+
+.topbar {
+    background-color: #1e3a8a;
     color: white;
-    padding: 15px 0;
-    background-color: #1e3a8a; 
-}
-.header-content {
-    justify-content: space-between;
-    align-items: center;
+    padding: 18px 32px;
     display: flex;
+    align-items: center;
 }
-.logo {
-    font-size: 1.5rem;
-    font-style: italic;
-    font-weight: bold;
+
+.Logo {
+    width: 120px;
+}
+
+.user {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-.logo img {
-    height: 60px; 
-    width: auto;  
-}
-.user-box {
-    align-items: center;
-    gap: 8px;
-    font-family: sans-serif; 
-    font-size: 0.9rem;
-    border: 1px solid rgba(255,255,255,0.5);
-    padding: 5px 15px;
-    border-radius: 4px;
-    display: flex;
-}
-/* main */
-.breadcrumb {
-    padding: 20px 0;
-    font-family: sans-serif;
-    font-size: 0.9rem;
-    color: #000;
-}
-.page-title-section {
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: #eeeeee; 
-    padding: 30px 0;
-}
-.page-title-section h2 {
-    margin-bottom: 10px;
-    color: #222;
-    font-size: 1.8rem;
-}
-.page-title-section p {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #444;
-}
-.content-wrapper {
-    max-width: 700px; 
-}
-.cart-icon-container {
-    text-align: center;
-    margin: 20px 0 40px 0;
-}
-form {
-    margin-bottom: 40px;
-}
-.form-group {
-    margin-bottom: 25px;
-}
-.form-group label {
-    font-weight: bold;
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 8px;
-}
-.input-field {
-    color: #555;
-    font-family: sans-serif; 
-    border-radius: 2px;
-    background-color: #f2f2f2; 
-    border: none; 
-    font-size: 0.95rem;
-    width: 100%;
-    padding: 12px 15px;
-}
-.form-row {
-    gap: 30px;
-    display: flex;
-}
-.half-width {
-    flex: 1; 
+    border: 2px solid white;
+    padding: 6px 18px;
+    margin-left: auto;
 }
 
-input[type=number] {
-    -moz-appearance: textfield;
+.perfil {
+    width: 28px;
 }
+
+.settings {
+    width: 28px;
+    margin-left: 15px;
+}
+
+.btn-voltar {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* ================= CARD CENTRAL ================= */
+
+.form-card {
+    max-width: 600px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    padding: 35px 40px;
+    border-radius: 4px;
+}
+
+/* ================= TÍTULO DO CARD ================= */
+
+.card-title {
+    text-align: center;
+    color: #1e3a8a;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+/* ================= FORM ================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+/* ================= BOTÃO ================= */
 
 .btn-submit {
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #1e3a8a; 
+    background-color: #1e3a8a;
     color: white;
     border: none;
-    text-align: center;
+    font-weight: bold;
+    padding: 12px;
+    width: 220px;
+    margin: 25px auto 0;
     display: block;
-    width: 50%; 
-    margin: 30px auto 0 auto; 
-    padding: 15px;
+    cursor: pointer;
 }
+
 .btn-submit:hover {
     background-color: #152c6b;
 }
+
+/* ================= RESUMO ================= */
+
 .summary-box {
-    padding: 20px;
-    margin-bottom: 50px;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    font-family: sans-serif;
-    color: #000;
-    background-color: #f2f2f2;
+    margin-top: 30px;
+    padding: 18px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background-color: #1f3c88; 
+    color: white;
+    padding: 30px;
+    margin-top: 90px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.logofooter {
+    margin-right: 100%;
+    width: 130px;
+    height: 90px;
+}
+
+.texto {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.desenvolvido {
+    margin-left: 15%;
+    margin-top: -7%;
+}
+
+.ano {
+    margin-left: 96%;
 }

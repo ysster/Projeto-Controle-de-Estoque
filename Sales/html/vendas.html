@@ -3,79 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales - Cadastra Venda</title>
+    <title>Sales - Cadastrar Venda</title>
     <link rel="stylesheet" href="../css/vendas.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">
-                <img src="../assets/Logoazul.png" alt="Sales Logo"> 
+
+<header class="topbar">
+    <a href="index.html" class="btn-voltar">←</a>
+    <img class="Logo" src="../assets/Logoazul.png" alt="Logo Sales">
+
+    <div class="user">
+        <img class="perfil" src="../assets/perfil.png" alt="Perfil">
+        <span class="username">Usuário</span>
+    </div>
+
+    <img class="settings" src="../assets/config.png" alt="Configurações">
+</header>
+
+<main>
+
+    <!-- CARD CENTRAL -->
+    <div class="form-card">
+
+        <h2 class="card-title">Cadastrar Venda</h2>
+
+        <form id="form-venda">
+
+            <div class="form-group">
+                <label for="produto">Produto</label>
+                <select id="produto" class="input-field" required>
+                    <option value="" disabled selected>-- Selecione o produto --</option>
+                </select>
             </div>
-            <div class="user-profile">
-                <div class="user-box">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    <span>Ana Maria</span>
+
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" class="input-field" required>
+                    <option value="" disabled selected>-- Selecionar a categoria --</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" id="quantidade" class="input-field" value="1" min="1" required>
+                </div>
+
+                <div class="form-group half-width">
+                    <label for="valor">Valor Unitário (R$)</label>
+                    <input type="number" id="valor" class="input-field" step="0.01" min="0" required>
                 </div>
             </div>
+
+            <button type="submit" class="btn-submit">Cadastrar Venda</button>
+        </form>
+
+        <div class="summary-box">
+            <p><strong>Total da Venda:</strong> <span id="total-venda">R$ 0,00</span></p>
+            <p><strong>Itens cadastrados:</strong></p>
+            <div id="lista-itens-texto">Nenhum item ainda</div>
         </div>
-    </header>
-    <main>
-        <div class="container breadcrumb">
-            <p><strong>Início/Cadastra Venda</strong></p>
+
+    </div>
+</main>
+<footer class="footer">
+    <img class="logofooter" src="../assets/Logoazul.png" alt="Erro de imagem"> 
+    <div class="texto">
+        <p><strong>My Sales</strong> – Controle de Vendas</p><br>
+        <p>Projeto orientado por:</p><br>
+        <p>
+            Romerito Campos <br>
+            Design web <br>
+            2 ano 1v
+        </p><br>
+        <div class="desenvolvido">
+            <p>Desenvolvido por:</p><br>
+            <p>
+                Andreza Pereira da Silva <br>
+                Jamilly Sterphane de Morais <br>
+                Joeslyanny Luanda da Silva Lopes
+            </p>
         </div>
-        <section class="page-title-section">
-            <div class="container">
-                <h2>Cadastra Venda</h2>
-                <p>Preencha os dados abaixo para registrar uma nova venda</p>
-            </div>
-        </section>
-        <div class="container content-wrapper">
-            <div class="cart-icon-container">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            </div>
-            <form id="form-venda">
-                <div class="form-group">
-                    <label for="produto">Produto</label>
-                    <select id="produto" class="input-field" required>
-                        <option value="" disabled selected>-- Selecione o produto --</option>
-                        <option value="notebook">Refrigerante</option>
-                        <option value="smartphone">Suco de goiaba</option>
-                        <option value="tablet">Hambúrguer</option>
-                        <option value="tablet">Pizza</option>
-                        <option value="tablet">Brigadeiro</option>
-                        <option value="tablet">Fatia de bolo</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="categoria">Categoria</label>
-                    <select id="categoria" class="input-field" required>
-                        <option value="" disabled selected>-- Selecionar a categoria --</option>
-                        <option value="eletronicos">Bebidas e doces</option>
-                        <option value="acessorios">Lanches</option>
-                        <option value="acessorios">Doces</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <div class="form-group half-width">
-                        <label for="quantidade">Quantidade</label>
-                        <input type="number" id="quantidade" class="input-field" value="1" min="1" required>
-                    </div>
-                    <div class="form-group half-width">
-                        <label for="valor">Valor Unitário(R$)</label>
-                        <input type="number" id="valor" class="input-field" placeholder="0,00" min="0" step="0.01" required>
-                    </div>
-                </div>
-                <button type="submit" class="btn-submit">Cadastra Venda</button>
-            </form>
-            <div class="summary-box">
-                <p><strong>Total da Venda:</strong> <span id="total-venda">R$ 0,00</span></p>
-                <p><strong>Itens cadastrados:</strong></p>
-                <div id="lista-itens-texto">
-                    Nenhum item ainda
-                </div>
-            </div>
-        </div>
-    </main>
+    </div>
+    <p class="ano">© 2026</p>
+</footer>
+
+
+<script src="../js/vendas.js"></script>
 </body>
 </html>
