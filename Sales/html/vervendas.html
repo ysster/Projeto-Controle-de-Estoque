@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <title>Relatório de Vendas</title>
+    <link rel="stylesheet" href="../css/vervendas.css">
+</head>
+<body>
+
+<div class="topo">
+    <h2>My Sales</h2>
+    <div class="usuario">Ana Maria</div>
+</div>
+
+<div class="container">
+
+    <div class="titulo">Relatório de Vendas</div>
+
+    <div class="barra">Período de Análise</div>
+
+    <div class="filtro">
+        <div class="campo">
+            <label>Data Inicial</label>
+            <input type="date" id="inicio">
+        </div>
+        <div class="campo">
+            <label>Data Final</label>
+            <input type="date" id="fim">
+        </div>
+        <button class="botao" onclick="gerar()">Filtrar Venda</button>
+    </div>
+
+    <table id="tabelaProdutos">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Quantidade</th>
+                <th>Valor Unitário</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-data="2026-01-10">
+                <td class="left">Coca-Cola</td>
+                <td>Bebidas</td>
+                <td>10</td>
+                <td>R$ 5,00</td>
+                <td>R$ 0,00</td>
+            </tr>
+            <tr data-data="2026-01-20">
+                <td class="left">Hambúrguer</td>
+                <td>Lanches</td>
+                <td>8</td>
+                <td>R$ 12,00</td>
+                <td>R$ 0,00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="barra">Total Faturado no Período</div>
+    <div class="total-box" id="totalPeriodo">R$ 0,00</div>
+
+    <div class="barra">Período de Análise</div>
+    <div class="texto-analise" id="analise">
+        Selecione um período para visualizar a análise do fluxo de vendas.
+    </div>
+
+</div>
+
+<div class="rodape">
+    <div>
+        <p><strong>My Sales – Controle de Vendas</strong></p>
+        <p>Desenvolvido por:</p>
+        <p>Andreza Pereira da Silva</p>
+        <p>Joeslyany Luanda da Silva Lopes</p>
+        <p>Jamily Stephanie de Morais</p>
+    </div>
+    <div>
+        <p><strong>Projeto orientado por:</strong></p>
+        <p>Romerito Campos</p>
+        <p>Design Web</p>
+        <p>2º Ano IV</p>
+    </div>
+    <div class="copy">©️ 2026</div>
+</div>
+
+<script src="../js/vervendas.js"></script>
+
+</body>
+</html>
+
