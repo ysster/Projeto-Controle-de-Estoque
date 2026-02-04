@@ -1,45 +1,45 @@
-function gerar(){
-    const inicio = document.getElementById("inicio").value;
-    const fim = document.getElementById("fim").value;
+const tabela = document.getElementById("tabela-vendas");
 
-    if(!inicio || !fim){
-        alert("Selecione o período de análise.");
-        return;
-    }
+const vendas = JSON.parse(localStorage.getItem("vendas")) || [];
 
-    const linhas = document.querySelectorAll("#tabelaProdutos tbody tr");
-    let totalGeral = 0;
+let totalFaturado = 0;
+let totalItens = 0;
+let produtos = {};
 
-    linhas.forEach(linha => {
-        const dataVenda = linha.getAttribute("data-data");
+vendas.forEach(v => {
+    tabela.innerHTML += `
+        <tr>
+            <td>${v.produto}</td>
+            <td>${v.categoria}</td>
+            <td>${v.quantidade}</td>
+            <td>${v.data}</td>
+            <td>R$ ${v.valor.toFixed(2)}</td>
+            <td>R$ ${v.subtotal.toFixed(2)}</td>
+        </tr>
+    `;
 
-        if(dataVenda >= inicio && dataVenda <= fim){
-            linha.style.display = "";
+    totalFaturado += v.subtotal;
+    totalItens += v.quantidade;
+    produtos[v.produto] = (produtos[v.produto] || 0) + v.quantidade;
+});
 
-            const qtd = parseInt(linha.children[2].innerText);
-            const valor = parseFloat(
-                linha.children[3].innerText.replace("R$", "").replace(",", ".")
-            );
+document.getElementById("total-vendas").innerText = vendas.length;
+document.getElementById("total-faturado").innerText = `R$ ${totalFaturado.toFixed(2)}`;
+document.getElementById("itens-vendidos").innerText = totalItens;
 
-            const total = qtd * valor;
-            linha.children[4].innerText =
-                "R$ " + total.toFixed(2).replace(".", ",");
+const maisVendido = Object.entries(produtos).sort((a,b) => b[1] - a[1])[0];
+if (maisVendido) {
+    document.getElementById("produto-mais-vendido").innerText =
+        `${maisVendido[0]} - ${maisVendido[1]} UN`;
+}
 
-            totalGeral += total;
-        } else {
-            linha.style.display = "none";
-        }
-    });
+if (vendas.length) {
+    const ultima = vendas[vendas.length - 1];
+    document.getElementById("ultima-venda").innerText =
+        `${ultima.produto} - ${ultima.data}`;
+}
+const nome = localStorage.getItem("nomeUsuario");
 
-    document.getElementById("totalPeriodo").innerText =
-        "R$ " + totalGeral.toFixed(2).replace(".", ",");
-
-    document.getElementById("analise").innerHTML =
-        "No período de <strong>" +
-        inicio.split("-").reverse().join("/") +
-        "</strong> até <strong>" +
-        fim.split("-").reverse().join("/") +
-        "</strong>, o relatório demonstra desempenho positivo nas vendas, " +
-        "com faturamento consistente, auxiliando no controle financeiro " +
-        "e na tomada de decisões estratégicas.";
+if (nome && document.getElementById("nomeUsuario")) {
+  document.getElementById("nomeUsuario").innerText = nome;
 }

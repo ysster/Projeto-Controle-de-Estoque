@@ -1,0 +1,147 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{ background:#f2f2f2; }
+
+.topbar {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+}
+
+.Logo {
+    width: 130px;
+    height: 90px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid white;
+    padding: 5px 18px;
+    margin-left: auto;
+}
+
+.perfil {
+    width: 30px;
+    height: 30px;
+}
+
+.btn-voltar {
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.btn-voltar:hover {
+    opacity: 0.7;
+}
+.container{
+    background:#fff;
+    width:90%;
+    margin:30px auto;
+    padding:30px;
+}
+.titulo{
+    text-align:center;
+    font-size:20px;
+    margin-bottom:20px;
+}
+.barra{
+    background:#1f3c88;
+    color:#fff;
+    padding:8px;
+    font-size:14px;
+    margin-top:25px;
+}
+.filtro{
+    display:flex;
+    gap:15px;
+    margin:15px 0;
+    align-items:end;
+}
+.campo{
+    display:flex;
+    flex-direction:column;
+}
+.campo label{
+    font-size:13px;
+}
+.campo input{
+    padding:6px;
+    width:160px;
+}
+.botao{
+    padding:7px 15px;
+    background:#1f3c88;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+    font-size:13px;
+}
+th, td{
+    border:1px solid #7f8fcf;
+    padding:8px;
+    text-align:center;
+}
+th{
+    background:#1f3c88;
+    color:#fff;
+}
+td.left{ text-align:left; }
+.total-box{
+    margin-top:15px;
+    border:1px solid #7f8fcf;
+    text-align:center;
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+.texto-analise{
+    border:1px solid #7f8fcf;
+    padding:15px;
+    font-size:14px;
+    line-height:1.6;
+    text-align:justify;
+}
+.footer {
+    background-color: #1f3c88; 
+    color: white;
+    padding: 30px;
+    margin-top: 90px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.logofooter {
+    margin-right: 100%;
+    width: 130px;
+    height: 90px;
+}
+
+.texto {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.desenvolvido {
+    margin-left: 15%;
+    margin-top: -7%;
+}
+
+.ano {
+    margin-left: 96%;
+}

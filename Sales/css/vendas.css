@@ -10,7 +10,6 @@ body {
     color: #333;
 }
 
-/* ================= HEADER ================= */
 
 .topbar {
     background-color: #1e3a8a;
@@ -37,11 +36,6 @@ body {
     width: 28px;
 }
 
-.settings {
-    width: 28px;
-    margin-left: 15px;
-}
-
 .btn-voltar {
     color: white;
     font-size: 24px;
@@ -49,7 +43,6 @@ body {
     margin-right: 20px;
 }
 
-/* ================= CARD CENTRAL ================= */
 
 .form-card {
     max-width: 600px;
@@ -59,7 +52,6 @@ body {
     border-radius: 4px;
 }
 
-/* ================= TÍTULO DO CARD ================= */
 
 .card-title {
     text-align: center;
@@ -67,8 +59,6 @@ body {
     font-size: 22px;
     margin-bottom: 30px;
 }
-
-/* ================= FORM ================= */
 
 .form-group {
     margin-bottom: 18px;
@@ -98,8 +88,6 @@ body {
     flex: 1;
 }
 
-/* ================= BOTÃO ================= */
-
 .btn-submit {
     background-color: #1e3a8a;
     color: white;
@@ -116,8 +104,6 @@ body {
     background-color: #152c6b;
 }
 
-/* ================= RESUMO ================= */
-
 .summary-box {
     margin-top: 30px;
     padding: 18px;
@@ -125,8 +111,6 @@ body {
     border: 1px solid #ddd;
     font-size: 14px;
 }
-
-/* ================= FOOTER ================= */
 
 .footer {
     background-color: #1f3c88; 

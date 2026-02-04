@@ -1,110 +1,77 @@
-// ELEMENTOS
-const selectProduto = document.getElementById("produto");
-const selectCategoria = document.getElementById("categoria");
-const inputQuantidade = document.getElementById("quantidade");
-const inputValor = document.getElementById("valor");
-
-const listaItens = document.getElementById("lista-itens-texto");
+const produtoSelect = document.getElementById("produto");
+const categoriaSelect = document.getElementById("categoria");
+const quantidadeInput = document.getElementById("quantidade");
+const valorInput = document.getElementById("valor");
 const totalVendaSpan = document.getElementById("total-venda");
+const listaItens = document.getElementById("lista-itens-texto");
 const form = document.getElementById("form-venda");
 
-// DADOS
 let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 let itensVenda = [];
 let totalVenda = 0;
 
-// =================== CARREGAR SELECTS ===================
-function carregarProdutosECategorias() {
-  selectProduto.innerHTML =
-    `<option value="" disabled selected>-- Selecione o produto --</option>`;
-  selectCategoria.innerHTML =
-    `<option value="" disabled selected>-- Selecionar a categoria --</option>`;
+function carregarSelects() {
+    produtoSelect.innerHTML = `<option disabled selected>Selecione</option>`;
+    categoriaSelect.innerHTML = `<option disabled selected>Selecione</option>`;
 
-  const categorias = new Set();
+    const categorias = new Set();
 
-  produtos.forEach(p => {
-    // produtos
-    const optProduto = document.createElement("option");
-    optProduto.value = p.nome;
-    optProduto.textContent = p.nome;
-    selectProduto.appendChild(optProduto);
+    produtos.forEach(p => {
+        produtoSelect.innerHTML += `<option>${p.nome}</option>`;
+        categorias.add(p.categoria);
+    });
 
-    // categorias
-    categorias.add(p.categoria);
-  });
-
-  categorias.forEach(cat => {
-    const optCat = document.createElement("option");
-    optCat.value = cat;
-    optCat.textContent = cat;
-    selectCategoria.appendChild(optCat);
-  });
+    categorias.forEach(c => {
+        categoriaSelect.innerHTML += `<option>${c}</option>`;
+    });
 }
 
-// =================== AUTO PREENCHER VALOR ===================
-selectProduto.addEventListener("change", () => {
-  const produtoSelecionado = produtos.find(
-    p => p.nome === selectProduto.value
-  );
-
-  if (produtoSelecionado) {
-    inputValor.value = produtoSelecionado.valor.toFixed(2);
-    selectCategoria.value = produtoSelecionado.categoria;
-  }
+produtoSelect.addEventListener("change", () => {
+    const prod = produtos.find(p => p.nome === produtoSelect.value);
+    if (prod) {
+        valorInput.value = prod.valor;
+        categoriaSelect.value = prod.categoria;
+    }
 });
 
-// =================== CADASTRAR VENDA ===================
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+form.addEventListener("submit", e => {
+    e.preventDefault();
 
-  const produto = selectProduto.value;
-  const categoria = selectCategoria.value;
-  const quantidade = Number(inputQuantidade.value);
-  const valor = Number(inputValor.value);
+    const venda = {
+        produto: produtoSelect.value,
+        categoria: categoriaSelect.value,
+        quantidade: Number(quantidadeInput.value),
+        valor: Number(valorInput.value),
+        subtotal: Number(quantidadeInput.value) * Number(valorInput.value),
+        data: new Date().toLocaleDateString("pt-BR")
+    };
 
-  if (!produto || !categoria || quantidade <= 0 || valor <= 0) {
-    alert("Preencha todos os campos corretamente.");
-    return;
-  }
+    itensVenda.push(venda);
+    totalVenda += venda.subtotal;
 
-  const subtotal = quantidade * valor;
-  totalVenda += subtotal;
+    const vendas = JSON.parse(localStorage.getItem("vendas")) || [];
+    vendas.push(venda);
+    localStorage.setItem("vendas", JSON.stringify(vendas));
 
-  itensVenda.push({
-    produto,
-    categoria,
-    quantidade,
-    valor,
-    subtotal
-  });
-
-  atualizarResumo();
-
-  // reset parcial
-  form.reset();
-  inputQuantidade.value = 1;
+    atualizarResumo();
+    form.reset();
+    quantidadeInput.value = 1;
 });
 
-// =================== ATUALIZAR CAIXA DE BAIXO ===================
 function atualizarResumo() {
-  listaItens.innerHTML = "";
-
-  itensVenda.forEach(item => {
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <p>
-        <strong>${item.produto}</strong><br>
-        Categoria: ${item.categoria}<br>
-        ${item.quantidade} x R$ ${item.valor.toFixed(2)} =
-        <strong>R$ ${item.subtotal.toFixed(2)}</strong>
-      </p>
-      <hr>
-    `;
-    listaItens.appendChild(div);
-  });
-
-  totalVendaSpan.innerText = `R$ ${totalVenda.toFixed(2)}`;
+    listaItens.innerHTML = "";
+    itensVenda.forEach(v => {
+        listaItens.innerHTML += `
+            <p>${v.produto} - ${v.quantidade} x R$ ${v.valor.toFixed(2)}</p>
+            <hr>
+        `;
+    });
+    totalVendaSpan.innerText = `R$ ${totalVenda.toFixed(2)}`;
 }
 
-// INICIALIZA
-carregarProdutosECategorias();
+carregarSelects();
+const nome = localStorage.getItem("nomeUsuario");
+
+if (nome && document.getElementById("nomeUsuario")) {
+  document.getElementById("nomeUsuario").innerText = nome;
+}

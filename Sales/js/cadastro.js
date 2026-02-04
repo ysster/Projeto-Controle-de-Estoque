@@ -1,36 +1,36 @@
 function cadastrar() {
-    const nome = document.getElementById("nome");
-    const email = document.getElementById("email");
-    const senha = document.getElementById("senha");
-    const confirmarSenha = document.getElementById("confirmarSenha");
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+    const confirmarSenha = document.getElementById("confirmarSenha").value;
+
     const erroSenha = document.getElementById("erroSenha");
     const msgSucesso = document.getElementById("msgSucesso");
 
     if (!nome || !email || !senha || !confirmarSenha) {
-        alert("Erro interno no formulário");
-        return;
-    }
-
-    if (
-        nome.value === "" ||
-        email.value === "" ||
-        senha.value === "" ||
-        confirmarSenha.value === ""
-    ) {
         alert("Preencha todos os campos!");
         return;
     }
 
-    if (senha.value !== confirmarSenha.value) {
+    if (senha !== confirmarSenha) {
         erroSenha.style.display = "block";
         return;
     } else {
         erroSenha.style.display = "none";
     }
 
-    localStorage.setItem("nomeUsuario", nome.value);
-    localStorage.setItem("emailUsuario", email.value);
-    localStorage.setItem("senhaUsuario", senha.value);
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const existe = usuarios.find(u => u.email === email);
+    if (existe) {
+        alert("Este e-mail já está cadastrado. Faça login.");
+        return;
+    }
+
+    usuarios.push({ nome, email, senha });
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    localStorage.setItem("nomeUsuario", nome);
     localStorage.setItem("usuarioLogado", "true");
 
     msgSucesso.style.display = "block";

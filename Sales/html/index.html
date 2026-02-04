@@ -16,7 +16,6 @@
     <span class="username" id="nomeUsuario">Usuário</span>
   </div>
 
-  <img class="settings" src="../assets/config.png" alt="Configurações">
 </header>
 
 <section class="titulo">
@@ -42,14 +41,14 @@
     <h3>Ver Vendas</h3>
     <img class="imgcard" src="../assets/vendas.png" alt="Vendas">
     <p>Consultar vendas realizadas.</p>
-    <button>Ver Vendas</button>
+    <button id="btnvervendas">Ver vendas</button>
   </div>
 
   <div class="card">
     <h3>Relatórios</h3>
     <img class="imgcard" src="../assets/relatorios.png" alt="Relatórios">
     <p>Visualizar relatórios.</p>
-    <button>Abrir relatórios</button>
+    <button id="btnrelatorios">Abrir relatórios</button>
   </div>
 </section>
 
@@ -57,29 +56,33 @@
   <div class="resumo">
     <div class="resumo-info">
       <h3>Total Faturado</h3>
-      <span class="resumovalor">R$ 0,00</span>
+      <span class="resumovalor" id="totalFaturado">R$ 0,00</span>
       <p>Soma das vendas</p>
     </div>
 
     <img class="imgresumo" src="../assets/dinheiro.png" alt="Resumo">
   </div>
 </section>
-
-
 <section class="cardsegundos">
   <div class="cardsegundo">
-    <h4>Última venda</h4>
-    <p>Produto: —</p>
-    <p>Valor: —</p>
-    <p>Data: —</p>
+    <div class="cardtexto">
+      <h4>Última venda</h4>
+      <p>Produto: <span id="ultima-produto">—</span></p>
+      <p>Valor: <span id="ultima-valor">—</span></p>
+      <p>Data: <span id="ultima-data">—</span></p>
+    </div>
+
     <img class="segundoimg" src="../assets/vendas.png" alt="Venda">
   </div>
 
   <div class="cardsegundo">
-    <h4>Resumo por categoria</h4>
-    <p>Bebidas: —</p>
-    <p>Lanches: —</p>
-    <p>Doces: —</p>
+    <div class="cardtexto">
+      <h4>Resumo por categoria</h4>
+      <p><span id="cat-1">—</span></p>
+      <p><span id="cat-2">—</span></p>
+      <p><span id="cat-3">—</span></p>
+    </div>
+
     <img class="segundoimg" src="../assets/produtos.png" alt="Categorias">
   </div>
 </section>

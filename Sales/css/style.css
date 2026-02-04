@@ -18,7 +18,6 @@ body {
   color: #000;
 }
 
-/* ================= HEADER ================= */
 .topbar {
   background: var(--blue);
   color: var(--white);
@@ -44,12 +43,6 @@ body {
   border: solid 2px white;
   padding: 5px 18px;
   margin-left: auto;
-}
-
-.settings {
-  width: 30px;
-  height: 30px;
-  margin-left: 16px;
 }
 
 .titulo {
@@ -101,6 +94,7 @@ body {
   background: var(--blue);
   margin: 60px 30px;
   padding: 20px;
+  
 }
 
 .resumo {
@@ -147,32 +141,28 @@ body {
 }
 
 .cardsegundo {
-  border: 1px solid black;
-  padding: 14px 18px;
-  width: 700px;
-  height: 200px;
-  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 110px;
   align-items: center;
-  align-content: start;    
+  border: solid 1px black ;
+  padding: 50px 85px;
 }
 
-.cardsegundo h4,
-.cardsegundo p {
-  grid-column: 1;
-  align-self: start;
+.cardtexto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  height: 100%;
 }
 
-.cardsegundo h4 {
-  font-size: 16px;
-  margin-bottom: 6px;
+.cardtexto h4 {
+  font-size: 18px; 
+  margin-bottom: 10px;
 }
 
-.cardsegundo p {
-  font-size: 13px;
-  line-height: 1.2;
-  margin: 2px 0;
+.cardtexto p {
+  font-size: 15px;  
+  line-height: 1.6;
 }
 
 .segundoimg {
