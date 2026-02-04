@@ -18,66 +18,70 @@ body {
   color: #000;
 }
 
+/* ================= HEADER ================= */
 .topbar {
   background: var(--blue);
   color: var(--white);
   padding: 16px 32px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .Logo {
- width: 130px;
- height: 90px;
+  width: 130px;
+  height: 90px;
 }
 
-.perfil{
+.perfil {
   width: 30px;
   height: 30px;
 }
 
-.user{
+.user {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   border: solid 2px white;
-  padding: 5px 30px 5px 15px;
-  margin-left: 1500px;
+  padding: 5px 20px;
+  margin-left: auto;
 }
 
-.settings{
+.settings {
   width: 30px;
   height: 30px;
+  margin-left: 20px;
 }
 
+/* ================= TÍTULO ================= */
 .titulo {
   text-align: center;
-  margin: 30px 0;
+  margin: 40px 0 30px 0;
 }
 
+/* ================= CARDS PRINCIPAIS ================= */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 0 240px;
-}
-
-.imgcard{
-  width: 150px;
-  height: 125px;
+  padding: 0 80px;
+  justify-items: center;
 }
 
 .card {
   border: 1px solid black;
-  padding: 20px;
+  padding: 20px 15px;
   text-align: center;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  max-width: 260px;
+  height: 280px;
 }
 
 .card h3 {
   margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
 }
 
 .card button {
@@ -85,84 +89,92 @@ body {
   color: white;
   border: none;
   padding: 10px 14px;
-  margin-top: 10px;
+  margin-top: 15px;
   cursor: pointer;
 }
 
-.resumos{
+.imgcard {
+  width: 140px;
+  height: auto;
+  margin: 8px auto;
+  display: block;
+}
+
+/* ================= RESUMO ================= */
+.resumos {
   background: var(--blue);
   color: white;
-  margin: 100px;
+  margin: 60px 80px;
   padding: 30px;
 }
 
-.resumo h3{
-  margin-top: 2%;
-  font-size: 30px;
+.resumo h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-.resumovalor{
-  font-size: 70px;
+.resumovalor {
+  font-size: 60px;
   font-weight: bold;
 }
 
-.imgresumo{
+.imgresumo {
   width: 200px;
   height: 200px;
-  margin-left: 88%;
-  margin-top: -900px;
+  display: block;
+  margin-left: auto;
 }
 
+/* ================= CARDS SECUNDÁRIOS ================= */
 .cardsegundos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  padding: 0 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 0 80px;
 }
 
 .cardsegundo {
   border: 1px solid black;
-  padding: 50px;
-  width: 90%;
-  margin-left: 5%;
+  padding: 30px;
 }
 
 .cardsegundo h4 {
   margin-bottom: 10px;
   font-size: 20px;
-  margin-top: 50px;
 }
 
-.segundoimg{
+.segundoimg {
   width: 200px;
   height: 159px;
-  margin-left: 70%;
-  margin-top: -130px;
+  display: block;
+  margin-left: auto;
 }
 
-.logofooter{
-  margin-right: 100%;
+/* ================= FOOTER ================= */
+.footer {
+  background-color: #1f3c88;
+  color: white;
+  padding: 30px 80px;
+  margin-top: 80px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logofooter {
   width: 130px;
   height: 90px;
 }
 
-.desenvolvido{
-  margin-left: 15%;
-  margin-top: -5%;
+.texto {
+  margin-top: 10px;
 }
 
-.texto{
-  margin-left: 20px;
-  margin-top: 20px;
+.desenvolvido {
+  margin-top: 10px;
 }
 
-.footer {
-  background: var(--blue-dark);
-  color: white;
-  padding: 30px;
-  margin-top: 90px;
-  text-align: left;
-  font-size: 14px;
-}
-.ano{
-  margin-left: 97%;
+.ano {
+  align-self: flex-end;
 }
